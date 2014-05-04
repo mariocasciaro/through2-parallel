@@ -1,0 +1,31 @@
+{
+  "name": "through2-parallel",
+  "description": "Parallel Transform stream with an interface lifted from through2",
+  "version": "0.1.0",
+  "author": {
+    "name": "Mario Casciaro"
+  },
+  "homepage": "https://github.com/mariocasciaro/through2-parallel",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/mariocasciaro/through2-parallel.git"
+  },
+  "scripts": {
+    "test": "./node_modules/istanbul/lib/cli.js cover ./node_modules/mocha/bin/_mocha test.js --report html -- -R spec"
+  },
+  "dependencies": {
+    "readable-stream": "~1.0.27-1"
+  },
+  "devDependencies": {
+    "chai": "~1.9.1",
+    "mocha": "~1.18.2",
+    "istanbul": "~0.2.8"
+  },
+  "keywords": [
+    "parallel",
+    "stream",
+    "transform",
+    "through"
+  ],
+  "license": "MIT"
+}
