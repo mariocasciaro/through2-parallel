@@ -7,6 +7,8 @@
 Creates a through stream (Transform stream) which executes in parallel while maintaining the order
 of the emitted chunks.
 
+Stability: **Experimental**
+
 ## Usage
 
 ```javascript
