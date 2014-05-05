@@ -59,9 +59,13 @@ ParallelTransformStream.prototype._createCallback =
   
 ParallelTransformStream.prototype._createContext = 
   function _createContext(item) {
+    var self = this;
     return {
       push: function(chunk) {
         item.chunks.push(chunk);
+      },
+      emit: function() {
+        self.emit.apply(self, arguments);
       }
     }
   };

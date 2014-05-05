@@ -31,7 +31,6 @@ describe('through2-parallel', function() {
     stream.resume();
   });
 
-
   it('should preserve the order', function (done) {
     var out = [];
     var stream = through.obj(function(chunk, enc, cb) {
@@ -54,6 +53,18 @@ describe('through2-parallel', function() {
     stream.write({time: 500, order: 1});
     stream.write({time: 200, order: 2});
     stream.write({time: 100, order: 3});
+    stream.end();
+  });
+
+  it('context should allow event emission', function (done) {
+    var stream = through.obj(function(chunk, enc, cb) {
+      this.emit('error', new Error());
+    });
+    stream.on('error', function(error) {
+      done();
+    });
+
+    stream.write("ignore");
     stream.end();
   });
 });
