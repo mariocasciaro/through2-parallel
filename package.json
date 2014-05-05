@@ -1,7 +1,7 @@
 {
   "name": "through2-parallel",
   "description": "Parallel Transform stream with an interface lifted from through2",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "author": {
     "name": "Mario Casciaro"
   },
