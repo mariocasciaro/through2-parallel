@@ -44,15 +44,15 @@ ParallelTransformStream.prototype._createCallback =
   function _createCallback(item) {
     var self = this;
     return function(err, chunk) {
-      if(chunk) {
-        item.chunks.push(chunk);
-      }
-      item.completed = true;
-      
       if(err) {
         self.emit('error', err);
         item.chunks = [];
+      } else {
+        if (chunk) {
+          item.chunks.push(chunk);
+        }
       }
+      item.completed = true;
       self._drainBuffer();
     };
   };
@@ -92,7 +92,5 @@ ParallelTransformStream.prototype._flush =
     }
   };
   
-module.exports = function(transform, concurrency) {
-  return new ParallelTransformStream(transform, concurrency);
-};
+module.exports = ParallelTransformStream;
 

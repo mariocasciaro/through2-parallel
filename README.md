@@ -53,10 +53,10 @@ Emitted: 3
 
 #### throughParallel([options], [transform], [flush])
 
-* `options`: Options to pass to the `Transform` stream plus one specific option:
+* `options`: Options to pass to the [`Transform`](http://nodejs.org/api/stream.html#stream_new_stream_transform_options) stream plus one specific option:
   *  `concurrency`: defaults to `2` and specifies how many tasks can run in parallel
-* `transform`: the `_transform` function
-* `flush`: the `_flush` function
+* `transform`: the [`_transform`](http://nodejs.org/api/stream.html#stream_transform_transform_chunk_encoding_callback) function.
+* `flush`: the [`_flush`](http://nodejs.org/api/stream.html#stream_transform_flush_callback) function.
 
 #### throughParallel.obj([options], [transform], [flush])
 
